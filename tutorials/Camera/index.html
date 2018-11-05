@@ -16,14 +16,14 @@
       background: var(--google-codelab-background, #F8F9FA);
     }
   </style>
-  
+
 </head>
 <body unresolved class="fullbleed">
 
   <google-codelab title="CS4518 Android Application Sensors Tutorial"
                   environment="web"
                   feedback-link="">
-    
+
       <google-codelab-step label="Overview of Tutorial" duration="0">
         <p>This tutorial will show you how to capture and save images for your Android app.  In this tutorial you will do the following:</p>
 <ul>
@@ -43,14 +43,14 @@
 
 
       </google-codelab-step>
-    
+
       <google-codelab-step label="Make a New Project" duration="0">
         <p>Similar to the UI tutorial you&#39;ll want to set up a new project.  This time, like last time, make it a <strong>blank</strong> project.<br>The only difference is that now you should name it something along the lines of &#34;Camera Tutorial&#34; because I am still boring.<br>Again, pick an empty activity since it&#39;s more fun for us to build from scratch!</p>
 <p><img alt="New Application ready to go!" src="img/2634a2d36de0e447.png"></p>
 
 
       </google-codelab-step>
-    
+
       <google-codelab-step label="Setting the manifest" duration="0">
         <p>Since we are using a camera in our application, we need to ensure that our app will not get installed on any device that does not have a camera.<br>To do this we need to add a few lines to the manifest file.</p>
 <p>The manifest file is <em>conveniently</em> located in the manifests folder.  Double click on it to open it.<br><img alt="Manifest file location" src="img/fe87d45b59d419fe.png"></p>
@@ -70,7 +70,7 @@
 
 
       </google-codelab-step>
-    
+
       <google-codelab-step label="Building our Camera UI" duration="0">
         <p>Because we want to keep our app simple we want our GUI to have three things.  First, we want a button to click in order to take a picture.  Second, we want a ImageView to display the picture that we&#39;ve just taken.  Finally, let&#39;s add in a text box so we can display the name and path of the picture we&#39;ve just taken.</p>
 <p>Putting this together should be a breeze if you&#39;ve gone through the first tutorial.  The only addition is a TextView (so it displays text but doesn&#39;t accept input text).  With a little effort you should end up with a GUI similar to the one below:<br><img alt="GUI layout to mimick" src="img/ea25c4648b0c0ae7.png"></p>
@@ -79,7 +79,7 @@
 
 
       </google-codelab-step>
-    
+
       <google-codelab-step label="Taking a picture!" duration="0">
         <h2>Starting image capture</h2>
 <p>The most basic function of this app is to take a picture when you click the button.  To do this we&#39;ll be creating an intent object and starting the activity to take the picture.  There are three main components to this.</p>
@@ -122,7 +122,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
       </google-codelab-step>
-    
+
       <google-codelab-step label="Saving the actual photo!" duration="0">
         <p>The reason the image looks so lousy is because it is using a thumbnail quality photo.  We want the full photo.  To use this we need to make sure that we can save the original photo and display it instead.</p>
 <p>Saving a photo requires first generating a temp file and passing its URI to the photo intent.</p>
@@ -138,7 +138,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 <h3>Updating your gradle</h3>
 <aside class="warning"><p>Heads up, you&#39;ll need an internet connection for modifying your gradle as it will download new files.</p>
 </aside>
-<p>You need to add <code>compile &#39;com.android.support:support-v4:&lt;version&gt;&#39;</code> to your app&#39;s build.gradle file where <code>&lt;version&gt;</code> is set to your target SDK level.<br><br>The specific file you want, as there are two build.gradle files, is the one that is annotated with &#34;Module: app&#34; in <em>Android</em> view or <code>app/build.gradle</code> in <em>Project</em> view.<br>Your gradle will prompt you to sync, which can take a little while as it collects the appropriate files.</p>
+<p>You need to add <code>implementation &#39;com.android.support:support-v4:&lt;version&gt;&#39;</code> to your app&#39;s build.gradle file where <code>&lt;version&gt;</code> is set to your target SDK level.<br><br>The specific file you want, as there are two build.gradle files, is the one that is annotated with &#34;Module: app&#34; in <em>Android</em> view or <code>app/build.gradle</code> in <em>Project</em> view.<br>Your gradle will prompt you to sync, which can take a little while as it collects the appropriate files.</p>
 <h3>Updating your manifest</h3>
 <p>Next, you need to modify your manifest to indicate that your app will be sharing files.  To do this add the following snippet to your manifest under application.  Don&#39;t forget to update the authorities!</p>
 <pre><code>&lt;provider
@@ -172,7 +172,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
       </google-codelab-step>
-    
+
       <google-codelab-step label="Summary" duration="0">
         <p>So that was a long one!  Taking and saving photos in Andorid can be a bit complex as there&#39;s a lot to control.  Luckily Android provides some easy ways for us to have the OS take care of a lot of the details for us.  The big take homes are:</p>
 <ul>
@@ -184,7 +184,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
       </google-codelab-step>
-    
+
       <google-codelab-step label="Further readings" duration="0">
         <p>Much of the detail of how to submit intent to take pictures was taken from the official google tutorial at <a href="https://developer.android.com/training/camera/photobasics" target="_blank">https://developer.android.com/training/camera/photobasics</a>.</p>
 <p>More details instructions on making your own camera application from scratch can be found at <a href="https://developer.android.com/training/camera/cameradirect#java" target="_blank">https://developer.android.com/training/camera/cameradirect#java</a>.</p>
@@ -192,7 +192,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
       </google-codelab-step>
-    
+
   </google-codelab>
 
   <script>
